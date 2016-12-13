@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe ModelsController, type: :controller do
   let!(:make) { create(:make) }
-  let(:models) { Make.all }
+  let!(:model) { create(:model, make: make) }
+  let(:models) { Model.where(make: make) }
 
   describe '#index' do
     describe 'template' do
@@ -14,7 +15,7 @@ RSpec.describe ModelsController, type: :controller do
     end
 
     describe 'exposes' do
-      before { get :index }
+      before { get :index, webmotors_make_id: make.webmotors_id }
 
       context 'exposes all models' do
         it { expect(controller.models).to eq models }
