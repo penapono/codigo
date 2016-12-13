@@ -1,0 +1,13 @@
+- makes = Make.all
+
+%form{ action: '/models', method: 'GET' }
+  %p
+    %label
+      = t('.choose')
+
+    %select{ name: 'webmotors_make_id' }
+      - makes.each do |make|
+        %option{ value: make.webmotors_id }
+          = make.name
+
+  %input{ type: 'submit', value: t('.submit') }

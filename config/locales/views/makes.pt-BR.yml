@@ -1,0 +1,7 @@
+pt-BR:
+  makes:
+    index:
+      choose: >
+        Escolha a Fabricante:
+      submit: >
+        Buscar Modelos
