@@ -19,15 +19,15 @@ Crie o config/database.yml para a aplicação
 
   test:
     <<: *default
-    database: adtsys_test
+    database: database_test
 
   development:
     <<: *default
-    database: adtsys_development
+    database: database_development
 
   production:
     <<: *default
-    database: adtsys_production
+    database: database_production
 ```
 
 Para inicializar o Banco com os dados iniciais de marcas e modelos
